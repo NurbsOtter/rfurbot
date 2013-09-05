@@ -1,0 +1,14 @@
+{
+	"name": "rfurbot",
+	"version":"0.0.1",
+	"author":"Redditfurs Steam Group",
+	"repository":{
+		"type":"git",
+		"url":"https://github.com/NurbsOtter/rfurbot"
+	},
+	"dependencies":{
+		"steam":"0.6.1",
+		"ntwitter":"0.5.0"
+	},
+	"license":"BSD"
+}
