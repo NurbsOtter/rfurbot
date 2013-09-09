@@ -7,7 +7,7 @@ var twit = new twitter({
 	access_token_secret: '' //Your twitter API info goes here.
 });
 
-
+var timeSince = new Date(); //Set the counter to the last boop.
 var bot = new Steam.SteamClient();
 bot.logOn({
 	accountName: 'leredditfursbot',
@@ -46,5 +46,11 @@ bot.on('message', function(source, message, type, chatter) {
 		{
 			bot.sendMessage(source,'Confirmed!',Steam.EChatEntryType.ChatMsg);
 		}
+	}
+	if (message.toLowerCase().match("dragon\ dildos"))
+	{
+		var newDate = Date(); //Get the current datetime.
+		bot.sendMessage(source,"Boop! It has been " + Math.round((newDate - timeSince) / 1000) + " seconds since the counter has been booped.",Steam.EChatEntryType.ChatMsg);
+		timeSince = newDate; //Set the counter to the last time someone said "it"
 	}
 }); 
