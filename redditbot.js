@@ -49,7 +49,7 @@ bot.on('message', function(source, message, type, chatter) {
 	}
 	if (message.toLowerCase().match("dragon\ dildos"))
 	{
-		var newDate = Date(); //Get the current datetime.
+		var newDate = new Date(); //Get the current datetime.
 		bot.sendMessage(source,"Boop! It has been " + Math.round((newDate - timeSince) / 1000) + " seconds since the counter has been booped.",Steam.EChatEntryType.ChatMsg);
 		timeSince = newDate; //Set the counter to the last time someone said "it"
 	}
