@@ -53,4 +53,35 @@ bot.on('message', function(source, message, type, chatter) {
 		bot.sendMessage(source,"Boop! It has been " + Math.round((newDate - timeSince) / 1000) + " seconds since the counter has been booped.",Steam.EChatEntryType.ChatMsg);
 		timeSince = newDate; //Set the counter to the last time someone said "it"
 	}
+		if (message.match("?") !=null) // this is a better answering line, this is Devleons addition to the rfb.
+	{
+		if(Math.random() > 0  && < .33)
+			{
+				bot.sendMessage(source,'yes',Steam.EChatEntryType.ChatMsg);
+			}
+		if(Math.random() > .34 && < .66)
+		{
+			bot.sendMessage(source, 'no', Steam.EChatEntryType.ChatMsg);
+		}
+		else
+		{
+			bot.sendMessage(source,'maybe',Steam.EChatEntryType.ChatMsg);
+		}
+	}
+	if(message == 'furry') //this counts the word furry 
+		{
+		var furry;
+		var x;
+		var furry = x;
+		bot.sendMessage(source,'Furry has been said +'furry'+ times',Steam.EChatEntryType.ChatMsg);
+		x++;
+		}
+	if(message == 'fuck') //this will count the word fuck
+		{
+		var fuck;
+		var x;
+		var fuck =x;
+		bot.sendMessage(source.'Fuck has been said +'fuck'+ times',Steam.EChatEntryType.ChatMsg);
+		x++;
+		}
 }); 
