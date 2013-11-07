@@ -29,31 +29,20 @@ bot.on('message', function(source, message, type, chatter) {
   }
 	if (message.match('!tweet') != null &&message.match('!tweet').index == 0)
 	{
-		console.log('Got tweet');
+		//console.log('Got tweet');
 		twit.verifyCredentials(function (err, data) {
   }).updateStatus(message.substring(7), function (err, data) {
       console.log(data);
     }
   );
-	}
-	if (message.match('c/d') != null)
-	{
-		if (Math.random() > 0.5) //Doesn't include 1, so it's a tad negative...:P
-		{
-			bot.sendMessage(source,'Denied!',Steam.EChatEntryType.ChatMsg);
-		}
-		else
-		{
-			bot.sendMessage(source,'Confirmed!',Steam.EChatEntryType.ChatMsg);
-		}
-	}
+	}	
 	if (message.toLowerCase().match("dragon\ dildos"))
 	{
 		var newDate = new Date(); //Get the current datetime.
 		bot.sendMessage(source,"Boop! It has been " + Math.round((newDate - timeSince) / 1000) + " seconds since the counter has been booped.",Steam.EChatEntryType.ChatMsg);
 		timeSince = newDate; //Set the counter to the last time someone said "it"
 	}
-		if (message.match("?") !=null) // this is a better answering line, this is Devleons addition to the rfb.
+		if (message.match("y/n") !=null) // this is a better answering line, this is Devleons addition to the rfb.
 	{
 		if(Math.random() > 0  && < .33)
 			{
@@ -67,21 +56,5 @@ bot.on('message', function(source, message, type, chatter) {
 		{
 			bot.sendMessage(source,'maybe',Steam.EChatEntryType.ChatMsg);
 		}
-	}
-	if(message == 'furry') //this counts the word furry 
-		{
-		var furry;
-		var x;
-		var furry = x;
-		bot.sendMessage(source,'Furry has been said +'furry'+ times',Steam.EChatEntryType.ChatMsg);
-		x++;
-		}
-	if(message == 'fuck') //this will count the word fuck
-		{
-		var fuck;
-		var x;
-		var fuck =x;
-		bot.sendMessage(source.'Fuck has been said +'fuck'+ times',Steam.EChatEntryType.ChatMsg);
-		x++;
-		}
+	}	
 }); 
