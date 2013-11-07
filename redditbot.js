@@ -42,13 +42,14 @@ bot.on('message', function(source, message, type, chatter) {
 		bot.sendMessage(source,"Boop! It has been " + Math.round((newDate - timeSince) / 1000) + " seconds since the counter has been booped.",Steam.EChatEntryType.ChatMsg);
 		timeSince = newDate; //Set the counter to the last time someone said "it"
 	}
-		if (message.match("y/n") !=null) // this is a better answering line, this is Devleons addition to the rfb.
+	if (message.match("y/n") !=null) // this is a better answering line, this is Devleons addition to the rfb.
 	{
-		if(Math.random() > 0  && < .33)
-			{
-				bot.sendMessage(source,'yes',Steam.EChatEntryType.ChatMsg);
-			}
-		if(Math.random() > .34 && < .66)
+		var randNum = Math.random();
+		if(randNum > 0  && randNum < .33)
+		{
+			bot.sendMessage(source,'yes',Steam.EChatEntryType.ChatMsg);
+		}
+		else if(randNum > .34 && randNum < .66)
 		{
 			bot.sendMessage(source, 'no', Steam.EChatEntryType.ChatMsg);
 		}
