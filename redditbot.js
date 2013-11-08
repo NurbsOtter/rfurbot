@@ -57,5 +57,9 @@ bot.on('message', function(source, message, type, chatter) {
 		{
 			bot.sendMessage(source,'maybe',Steam.EChatEntryType.ChatMsg);
 		}
-	}	
+	}
+	if(message.match("wut") !=null) //just something fun i guess, dont test this; must be stumbled upon
+	{
+		bot.sendMessage(source,'U Wut Mate', Steam.EChatEntryType.ChatMsg);
+	}
 }); 
