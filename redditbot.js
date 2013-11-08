@@ -62,4 +62,12 @@ bot.on('message', function(source, message, type, chatter) {
 	{
 		bot.sendMessage(source,'U Wut Mate', Steam.EChatEntryType.ChatMsg);
 	}
+	if(message.match("!rules") !=null)//This is going to display the server rules...might be handy in some scenarios
+	{
+		bot.sendMessage(source,'Member Rules"\n"'+
+			'1. - No being rude to others (harassment, chat with intentions to start a fight, spamming)"\n"'+
+			'2. - NSFW links should be tagged and sent in moderation"\n"'+
+			'3. - Serious roleplay is not allowed. Non-serious roleplay should be infrequent."\n"'+
+			'4. - Redditfurs gaming groups should be inclusive, and not judge people based on skill.',Steam.EChatEntryType.ChatMsg);
+	}
 }); 
