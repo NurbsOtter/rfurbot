@@ -70,4 +70,49 @@ bot.on('message', function(source, message, type, chatter) {
 			'"\t"3. - Serious roleplay is not allowed. Non-serious roleplay should be infrequent."\n"'+
 			'"\t"4. - Redditfurs gaming groups should be inclusive, and not judge people based on skill.',Steam.EChatEntryType.ChatMsg);
 	}
+	if(message.match("!8") //requested thing that the people wanted
+		{
+			var ball= Math.floor((Math.random()*10)+1);
+			
+				if(ball = 1)
+					{
+					bot.sendMessage(source,"It is decidedly so",Steam.EChat.EntryType.ChatMsg);
+					}
+				else if(ball = 2)
+					{
+					bot.sendMessage(source,"Without a doubt",Steam.EChat.EntryType.ChatMsg);
+					}
+				else if(ball = 3)
+					{
+					bot.sendMessage(source,"As I see it, yes",Steam.EChat.EntryType.ChatMsg);
+					}
+				else if(ball = 4)
+					{
+					bot.sendMessage(source,"Better not tell you now",Steam.EChat.EntryType.ChatMsg);
+					}
+				else if(ball = 5)
+					{
+					bot.sendMessage(source,"What the hell have you done, you just broke me right in the code....why would you do something like this you monster",Steam.EChat.EntryType.ChatMsg);
+					}
+				else if(bal = 6)
+					{
+					bot.sendMessage(source,"Cannot predict now",Steam.EChat,EntryType.ChatMsg);
+					}
+				else if(ball = 7)
+					{
+					bot.sendMessage(source,"Ask again later",Steam.EChat.EntryType.ChatMsg);
+					}
+				else if(ball = 8)
+					{
+					bot.sendMessage(source,"Don't count on it",Steam.EChat.EntryType.ChatMsg);
+					}
+				else if(ball = 9)
+					{
+					bot.sendMessage(source,"My sources say no",Steam.EChat.EntryType.ChatMsg);
+					}
+				else
+					{
+					bot.sendMessage(source,"Outlook not so good",Steam.EChat.EntryType,ChatMsg);
+					}
+		}
 }); 
