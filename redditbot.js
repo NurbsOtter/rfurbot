@@ -119,4 +119,27 @@ bot.on('message', function(source, message, type, chatter) {
 		{
 			bot.sendMessage(source,"You want to search for furry porn in MY chat. Who do you think you are, Nurbs? /bannu",Steam.EChat.EntryType.ChatMsg);
 		}
+	if(message.match("can i ask a question") //request to answer a question
+		{
+			var q = Math.floor((Math.random()*10)+1);
+			var num = Math.floor((Math.random()*10)+1);
+			var answer;
+			if(num > 5)
+				{
+				var answer = yes;
+				}
+			else
+				{
+				var answer = no;
+				}
+			
+			if(q > 6)
+				{
+				bot.sendMessage(source,"You may ask you question and the answer is "answer,Steam.EChat.EntryType.ChatMsg);
+				}
+			else
+				{
+				bot.sendMessage9source,"You are not allowed to ask questions you filthy peasant",Steam.EChat.EntryType.ChatMsg);
+				}
+		}
 }); 
