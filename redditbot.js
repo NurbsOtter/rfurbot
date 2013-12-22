@@ -1,18 +1,11 @@
 var Steam = require('steam');
-var twitter = require('ntwitter')
-var twit = new twitter({
-	consumer_key: '',
-	consumer_secret: '',
-	access_token_key: '',
-	access_token_secret: '' //Your twitter API info goes here.
-});
+var twitter = require('ntwitter');
+var settings = require('./settings.js'); //Settings are now stored externally. See settings.js for details.
+var twit = new twitter(settings.twitterSettings);
 
 var timeSince = new Date(); //Set the counter to the last boop.
 var bot = new Steam.SteamClient();
-bot.logOn({
-	accountName: 'leredditfursbot',
-	password: ''//Your steam password goes here
-});
+bot.logOn(settings.steamSettings);
 bot.on('loggedOn', function() {
 	console.log('Works!');
 	bot.joinChat('103582791432513498'); //This is the ID for the RFurchat
@@ -36,7 +29,7 @@ bot.on('message', function(source, message, type, chatter) {
     }
   );
 	}	
-	if (message.toLowerCase().match("dragon\ dildos"))
+	if (message.toLowerCase().match("dragon\ dildos") || message.toLowerCase().match("dragon\ dildo"))
 	{
 		var newDate = new Date(); //Get the current datetime.
 		bot.sendMessage(source,"Boop! It has been " + Math.round((newDate - timeSince) / 1000) + " seconds since the counter has been booped.",Steam.EChatEntryType.ChatMsg);
@@ -58,11 +51,11 @@ bot.on('message', function(source, message, type, chatter) {
 			bot.sendMessage(source,'maybe',Steam.EChatEntryType.ChatMsg);
 		}
 	}
-	if(message.match("wut") !=null) //just something fun i guess, dont test this; must be stumbled upon
+	if(message.match("wut") === 0) //just something fun i guess, dont test this; must be stumbled upon
 	{
-		bot.sendMessage(source,'U Wut Mate', Steam.EChatEntryType.ChatMsg);
+		bot.sendMessage(source,'U Wut Mate, I swear on me mum!', Steam.EChatEntryType.ChatMsg);
 	}
-	if(message.match("!rules") !=null)//This is going to display the server rules...might be handy in some scenarios
+	if(message.match("!rules") === 0)//This is going to display the server rules...might be handy in some scenarios
 	{
 		bot.sendMessage(source,'Member Rules"\n"'+
 			'"\t"1. - No being rude to others (harassment, chat with intentions to start a fight, spamming)"\n"'+
@@ -70,7 +63,7 @@ bot.on('message', function(source, message, type, chatter) {
 			'"\t"3. - Serious roleplay is not allowed. Non-serious roleplay should be infrequent."\n"'+
 			'"\t"4. - Redditfurs gaming groups should be inclusive, and not judge people based on skill.',Steam.EChatEntryType.ChatMsg);
 	}
-	if(message.match("!8") //requested thing that the people wanted
+	if(message.match("!8") === 0) //requested thing that the people wanted
 		{
 		var ball= Math.floor((Math.random()*10)+1);
 		
@@ -115,22 +108,22 @@ bot.on('message', function(source, message, type, chatter) {
 					bot.sendMessage(source,"Outlook not so good",Steam.EChat.EntryType,ChatMsg);
 				}
 		}
-	if(message.match("!e621") //just for fun :p
+	if(message.match("!e621") != null) //just for fun :p
 		{
-			bot.sendMessage(source,"You want to search for furry porn in MY chat. Who do you think you are, Nurbs? /bannu",Steam.EChat.EntryType.ChatMsg);
+			bot.sendMessage(source,"Do I look like a SergalBot to you?",Steam.EChat.EntryType.ChatMsg);
 		}
-	if(message.match("can i ask a question") //request to answer a question
+	if(message.match("can i ask a question") != null) //request to answer a question
 		{
 			var q = Math.floor((Math.random()*10)+1);
 			var num = Math.floor((Math.random()*10)+1);
 			var answer;
 			if(num > 5)
 				{
-				var answer = yes;
+					answer = yes;
 				}
 			else
 				{
-				var answer = no;
+					answer = no;
 				}
 			
 			if(q > 6)
@@ -139,7 +132,7 @@ bot.on('message', function(source, message, type, chatter) {
 				}
 			else
 				{
-				bot.sendMessage9source,"You are not allowed to ask questions you filthy peasant",Steam.EChat.EntryType.ChatMsg);
+				bot.sendMessage(source,"You are not allowed to ask questions you filthy peasant",Steam.EChat.EntryType.ChatMsg);
 				}
 		}
 }); 
