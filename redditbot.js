@@ -5,7 +5,10 @@ var twit = new twitter(settings.twitterSettings);
 
 var timeSince = new Date(); //Set the counter to the last boop.
 var bot = new Steam.SteamClient();
-bot.logOn(settings.steamSettings);
+bot.logOn({
+        accountName: 'leredditfursbot',
+        password: ''//Your steam password goes here
+});
 bot.on('loggedOn', function() {
 	console.log('Works!');
 	bot.joinChat('103582791432513498'); //This is the ID for the RFurchat
@@ -128,7 +131,7 @@ bot.on('message', function(source, message, type, chatter) {
 			
 			if(q > 6)
 				{
-				bot.sendMessage(source,"You may ask you question and the answer is "answer,Steam.EChat.EntryType.ChatMsg);
+				bot.sendMessage(source,"You may ask you question and the answer is " + answer,Steam.EChat.EntryType.ChatMsg);
 				}
 			else
 				{
