@@ -13,6 +13,7 @@ bot.logOn({
         accountName: 'leredditfursbot',
         password: ''//Your steam password goes here
 });
+
 bot.on('loggedOn', function() {
 	console.log('Works!');
 	bot.joinChat('103582791432513498'); //This is the ID for the RFurchat
@@ -64,11 +65,11 @@ bot.on('message', function(source, message, type, chatter) {
 	}
 	if(message.match("!rules") != null && message.match("!rules").index === 0)//This is going to display the server rules...might be handy in some scenarios
 	{
-		bot.sendMessage(source,'Member Rules"\n"'+
-			'"\t"1. - No being rude to others (harassment, chat with intentions to start a fight, spamming)"\n"'+
-			'"\t"2. - NSFW links should be tagged and sent in moderation"\n"'+
-			'"\t"3. - Serious roleplay is not allowed. Non-serious roleplay should be infrequent."\n"'+
-			'"\t"4. - Redditfurs gaming groups should be inclusive, and not judge people based on skill.',Steam.EChatEntryType.ChatMsg);
+		bot.sendMessage(source,'Member Rules\n'+
+			'\t1. - No being rude to others (harassment, chat with intentions to start a fight, spamming)\n'+
+			'\t2. - NSFW links should be tagged and sent in moderation"\n"'+
+			'\t3. - Serious roleplay is not allowed. Non-serious roleplay should be infrequent.\n'+
+			'\t4. - Redditfurs gaming groups should be inclusive, and not judge people based on skill.',Steam.EChatEntryType.ChatMsg);
 	}
 	if(message.match("!8") != null && message.match("!8").index === 0) //requested thing that the people wanted
 		{
@@ -76,48 +77,48 @@ bot.on('message', function(source, message, type, chatter) {
 		
 			if(ball == 1)
 				{
-					bot.sendMessage(source,"It is decidedly so",Steam.EChat.EntryType.ChatMsg);
+					bot.sendMessage(source,"It is decidedly so",Steam.EChatEntryType.ChatMsg);
 				}
 			else if(ball == 2)
 				{
-					bot.sendMessage(source,"Without a doubt",Steam.EChat.EntryType.ChatMsg);
+					bot.sendMessage(source,"Without a doubt",Steam.EChatEntryType.ChatMsg);
 				}
 			else if(ball == 3)
 				{
-					bot.sendMessage(source,"As I see it, yes",Steam.EChat.EntryType.ChatMsg);
+					bot.sendMessage(source,"As I see it, yes",Steam.EChatEntryType.ChatMsg);
 				}
 			else if(ball == 4)
 				{
-					bot.sendMessage(source,"Better not tell you now",Steam.EChat.EntryType.ChatMsg);
+					bot.sendMessage(source,"Better not tell you now",Steam.EChatEntryType.ChatMsg);
 				}
 			else if(ball == 5)
 				{
-					bot.sendMessage(source,"What the hell have you done, you just broke me right in the code....why would you do something like this you monster",Steam.EChat.EntryType.ChatMsg);
+					bot.sendMessage(source,"What the hell have you done, you just broke me right in the code....why would you do something like this you monster",Steam.EChatEntryType.ChatMsg);
 				}
 			else if(bal == 6)
 				{
-					bot.sendMessage(source,"Cannot predict now",Steam.EChat,EntryType.ChatMsg);
+					bot.sendMessage(source,"Cannot predict now",Steam.EChatEntryType.ChatMsg);
 				}
 			else if(ball == 7)
 				{
-					bot.sendMessage(source,"Ask again later",Steam.EChat.EntryType.ChatMsg);
+					bot.sendMessage(source,"Ask again later",Steam.EChatEntryType.ChatMsg);
 				}
 			else if(ball == 8)
 				{
-					bot.sendMessage(source,"Don't count on it",Steam.EChat.EntryType.ChatMsg);
+					bot.sendMessage(source,"Don't count on it",Steam.EChatEntryType.ChatMsg);
 				}
 			else if(ball == 9)
 				{
-					bot.sendMessage(source,"My sources say no",Steam.EChat.EntryType.ChatMsg);
+					bot.sendMessage(source,"My sources say no",Steam.EChatEntryType.ChatMsg);
 				}
 			else
 				{
-					bot.sendMessage(source,"Outlook not so good",Steam.EChat.EntryType,ChatMsg);
+					bot.sendMessage(source,"Outlook not so good",Steam.EChatEntryType.ChatMsg);
 				}
 		}
 	if(message.match("!e621") != null) //just for fun :p
 		{
-			bot.sendMessage(source,"Do I look like a SergalBot to you?",Steam.EChat.EntryType.ChatMsg);
+			bot.sendMessage(source,"Do I look like a SergalBot to you?",Steam.EChatEntryType.ChatMsg);
 		}
 	if(message.match("can i ask a question") != null) //request to answer a question
 		{
@@ -135,11 +136,11 @@ bot.on('message', function(source, message, type, chatter) {
 			
 			if(q > 6)
 				{
-				bot.sendMessage(source,"You may ask you question and the answer is " + answer,Steam.EChat.EntryType.ChatMsg);
+				bot.sendMessage(source,"You may ask you question and the answer is " + answer,Steam.EChatEntryType.ChatMsg);
 				}
 			else
 				{
-				bot.sendMessage(source,"You are not allowed to ask questions you filthy peasant",Steam.EChat.EntryType.ChatMsg);
+				bot.sendMessage(source,"You are not allowed to ask questions you filthy peasant",Steam.EChatEntryType.ChatMsg);
 				}
 		}
 }); 
