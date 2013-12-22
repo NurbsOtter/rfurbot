@@ -58,11 +58,11 @@ bot.on('message', function(source, message, type, chatter) {
 			bot.sendMessage(source,'maybe',Steam.EChatEntryType.ChatMsg);
 		}
 	}
-	if(message.match("wut").index === 0) //just something fun i guess, dont test this; must be stumbled upon
+	if(message.match("wut") != null && message.match("wut").index === 0) //just something fun i guess, dont test this; must be stumbled upon
 	{
 		bot.sendMessage(source,'U Wut Mate, I swear on me mum!', Steam.EChatEntryType.ChatMsg);
 	}
-	if(message.match("!rules").index === 0)//This is going to display the server rules...might be handy in some scenarios
+	if(message.match("!rules") != null && message.match("!rules").index === 0)//This is going to display the server rules...might be handy in some scenarios
 	{
 		bot.sendMessage(source,'Member Rules"\n"'+
 			'"\t"1. - No being rude to others (harassment, chat with intentions to start a fight, spamming)"\n"'+
@@ -70,7 +70,7 @@ bot.on('message', function(source, message, type, chatter) {
 			'"\t"3. - Serious roleplay is not allowed. Non-serious roleplay should be infrequent."\n"'+
 			'"\t"4. - Redditfurs gaming groups should be inclusive, and not judge people based on skill.',Steam.EChatEntryType.ChatMsg);
 	}
-	if(message.match("!8").index === 0) //requested thing that the people wanted
+	if(message.match("!8") != null && message.match("!8").index === 0) //requested thing that the people wanted
 		{
 		var ball= Math.floor((Math.random()*10)+1);
 		
