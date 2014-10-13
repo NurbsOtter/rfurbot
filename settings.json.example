@@ -1,0 +1,10 @@
+{
+	"userName":"",//Steam user name
+	"password":"",//Steam password
+	"twitter":{
+		"consumer_key": "",//Twitter API Consumer Key
+		"consumer_secret": "",//Twitter API Consumer Secret
+		"access_token_key": "",//Twitter API Token Key
+		"access_token_secret": ""//Twitter API Token Secret
+	}
+}
